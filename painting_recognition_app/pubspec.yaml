@@ -42,7 +42,7 @@ dependencies:
   # 아래의 부분은 전 프로젝트에서 사용했던 id/pw 정보 기억하기, 확인 후 사용
   shared_preferences: ^2.0.15 # 앱 종료해도 정보를 보관하기
   get: ^4.6.5 # 상태 유지? 상태 관리?
-  google_sign_in: ^5.3.3 # 구글계정 로그인
+  # google_sign_in: ^5.3.3 # 구글계정 로그인
   easy_splash_screen: ^1.0.3 # 로딩화면
 
 dev_dependencies:
