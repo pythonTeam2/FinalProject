@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.black87,
         title: const Text('Home'),
       ),
       body: Center(
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
           children: [
           const SizedBox(height: 30),
           ElevatedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black), minimumSize: MaterialStateProperty.all(const Size(200, 50))),
+            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black87), minimumSize: MaterialStateProperty.all(const Size(200, 50))),
               onPressed: () {
                 //
               },
@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
               )),
           const SizedBox(height: 30),
           ElevatedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black), minimumSize: MaterialStateProperty.all(const Size(200, 50))),
+            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.black87), minimumSize: MaterialStateProperty.all(const Size(200, 50))),
               onPressed: () {
                 //
               },
@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
               accountName: Text('${Message.uName}님'),
               accountEmail: Text(Message.uEmail),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 164, 154, 239),
+                color: Colors.black87,
                 //테두리, 값을 각각 줄 수 있음. all 은 한번에 다 뜸
               ),
             ),
