@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:painting_recognition_app/message.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashPage extends StatefulWidget {
@@ -42,31 +43,33 @@ class _SplashPageState extends State<SplashPage> {
         finalId = obitainedId;
         finalName = obitainedName;
         finalEmail = obitainedEmail;
+        Message.uId = finalId!;
+        Message.uEmail = finalEmail!;
+        Message.uName = finalName!;
       }
     });
-    // print("로딩 : $finalId");
   }
 
   @override
   Widget build(BuildContext context) {
     return EasySplashScreen(
-      logo: Image.asset('images/korea.png'),
+      logo: Image.asset('images/pearly.png'),
       title: const Text(
         '이미지 파일로 명화를 인식해보세요!',
         style: TextStyle(
-          backgroundColor: Colors.black38,
+          // backgroundColor: Colors.black38,
           fontSize: 25,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Colors.blueAccent,
         ),
       ),
-      backgroundImage: const AssetImage('images/pearly.png'),
+      // backgroundImage: const AssetImage('images/pearly.png'),
       showLoader: true,
       loadingText: const Text(
         "Loading...",
         style: TextStyle(
-          backgroundColor: Colors.black38,
-          color: Colors.white,
+          // backgroundColor: Colors.black38,
+          color: Colors.black,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),

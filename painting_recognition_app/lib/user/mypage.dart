@@ -49,7 +49,7 @@ class _MyPageState extends State<MyPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         iconTheme: const IconThemeData(
-          color: Color.fromARGB(168, 111, 110, 110), //색변경
+          color: Colors.black87, //색변경
         ),
         title: const Text(
           'My Page',
@@ -117,18 +117,18 @@ class _MyPageState extends State<MyPage> {
                                 labelText: 'ID',
                                 hintText: 'id를 입력해주세요!',
                                 labelStyle:
-                                    TextStyle(color: Colors.deepPurpleAccent),
+                                    TextStyle(color: Colors.black87),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius:
@@ -150,18 +150,18 @@ class _MyPageState extends State<MyPage> {
                                 labelText: 'PW',
                                 hintText: '비밀번호를 입력해주세요!',
                                 labelStyle:
-                                    TextStyle(color: Colors.deepPurpleAccent),
+                                    TextStyle(color: Colors.black87),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius:
@@ -182,18 +182,18 @@ class _MyPageState extends State<MyPage> {
                                 labelText: 'Name',
                                 hintText: '이름을 입력해주세요!',
                                 labelStyle:
-                                    TextStyle(color: Colors.deepPurpleAccent),
+                                    TextStyle(color: Colors.black87),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius:
@@ -214,18 +214,18 @@ class _MyPageState extends State<MyPage> {
                                 labelText: 'Birth',
                                 hintText: '생년월일을 6자로 입력해주세요!',
                                 labelStyle:
-                                    TextStyle(color: Colors.deepPurpleAccent),
+                                    TextStyle(color: Colors.black87),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius:
@@ -246,18 +246,18 @@ class _MyPageState extends State<MyPage> {
                                 labelText: 'Email',
                                 hintText: '이메일을 입력해주세요!',
                                 labelStyle:
-                                    TextStyle(color: Colors.deepPurpleAccent),
+                                    TextStyle(color: Colors.black87),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                   borderSide: BorderSide(
-                                      width: 1, color: Colors.deepPurpleAccent),
+                                      width: 1, color: Colors.black87),
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius:
@@ -288,7 +288,7 @@ class _MyPageState extends State<MyPage> {
                       updateAction();
                     },
                     style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(255, 164, 154, 239),
+                        primary: Colors.black87,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     child: const Text(
@@ -304,7 +304,7 @@ class _MyPageState extends State<MyPage> {
                       _deleteShowDialog(context);
                     },
                     style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(255, 164, 154, 239),
+                        primary: Colors.black87,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     child: const Text(
@@ -368,9 +368,8 @@ updateAction() async {
             actions: [
               TextButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/Mypage');
+                  Navigator.popAndPushNamed(context, '/mypage');
                 },
                 child: const Text('예'),
               ),
@@ -380,7 +379,6 @@ updateAction() async {
   }
 
   deleteAction() async {
-    print(uId);
     var url = Uri.parse('http://localhost:8080/Flutter/fitness/mypage_user_delete.jsp?uId=$uId');
     var response = await http.get(url);
     setState(() {

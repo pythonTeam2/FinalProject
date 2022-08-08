@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // debug banner false
+      debugShowCheckedModeBanner: false,
       routes: {
         // loading
         '/loading': (context) => const SplashPage(),
