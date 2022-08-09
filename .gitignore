@@ -417,6 +417,7 @@ $RECYCLE.BIN/
 *.jpeg
 *.png
 *.xlsx
-
+*.h5
+*.tflite
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,visualstudiocode,python,jupyternotebooks,flutter,java,eclipse
