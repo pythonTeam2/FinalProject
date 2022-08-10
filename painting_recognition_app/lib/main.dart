@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
         // user part
         '/sign_in': (context) => const LogIn(),
         '/sign_up': (context) => const SignUp(),
-        '/find_id': (context) => const FindMain(), // 탭바 연결, 확인 필요
-        '/find_pw': (context) => const FindMain2(), // 탭바 연결, 확인 필요
+        '/find_id': (context) => const FindMain(), // 탭바 연결, id 기준
+        '/find_pw': (context) => const FindMain2(), // 탭바 연결, pw 기준
         '/mypage': (context) => const MyPage(),
 
         // painting part
