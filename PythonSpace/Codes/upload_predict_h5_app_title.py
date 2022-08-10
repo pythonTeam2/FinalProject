@@ -74,11 +74,11 @@ def uploader():
                 'The Seed of the Areoi',
                 'The Triumph of Bacchus',
                 'The milkmaid']
+                
     os.chdir('..')
     model2 = keras.models.load_model("./art_50.h5")
     preds = model2.predict(testImage[0:1])
     return jsonify({'result' : dirNames[np.argmax(preds[0])]})
-
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)

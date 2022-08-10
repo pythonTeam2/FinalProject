@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
   Future getJSONData() async {
     data.clear();
     var url = Uri.parse(
-        "http://localhost:8080/Flutter/fitness/mypage_select.jsp?uId=$finalId");
+        "http://localhost:8080/Flutter/painting/mypage_select.jsp?uId=$finalId");
     var response = await http.get(url);
     setState(() {
       var dataConvertedJSON = json.decode(utf8.decode(response.bodyBytes));
@@ -68,7 +68,6 @@ class _HomeState extends State<Home> {
       Message.uId = data[0]['uId'];
       Message.uPw = data[0]['uPw'];
       Message.uName = data[0]['uName'];
-      Message.uBirth = data[0]['uBirth'].toString();
       Message.uEmail = data[0]['uEmail'];
     });
   }
@@ -78,7 +77,10 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        title: const Text('Home'),
+        title: const Text(
+          'Smart Art Gallery',
+          style: TextStyle(fontSize: 20),
+        ),
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -104,7 +106,8 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.all(10.0),
                 child: Text(
                   '명작 50선 중에 하나를 촬영 및 업로드하시면, \n인공지능이 그 그림의 정보를 알려드립니다.',
-                  style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic, height: 1.5),
+                  style: TextStyle(
+                      fontSize: 15, fontStyle: FontStyle.italic, height: 1.5),
                 ),
               ),
             ),
@@ -117,11 +120,14 @@ class _HomeState extends State<Home> {
                 Navigator.pushNamed(context, '/painting');
               },
               child: const Text(
-                '명화 인식 해보자구!',
+                '명화 인식 해보자구!   >>',
                 style: TextStyle(fontSize: 15),
               )),
           const SizedBox(height: 30),
-          const Divider(endIndent: 1, color: Colors.black45,),
+          const Divider(
+            endIndent: 1,
+            color: Colors.black45,
+          ),
           const SizedBox(height: 30),
           ElevatedButton(
               style: ButtonStyle(
@@ -141,7 +147,8 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.all(10.0),
                 child: Text(
                   '정물화, 풍경화, 초상화 중에 하나를 촬영 및 업로드하시면, 인공지능이 셋 중에 어떤 장르인지 맞춥니다.',
-                  style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic, height: 1.5),
+                  style: TextStyle(
+                      fontSize: 15, fontStyle: FontStyle.italic, height: 1.5),
                 ),
               ),
             ),
@@ -154,7 +161,7 @@ class _HomeState extends State<Home> {
                 Navigator.pushNamed(context, '/genre');
               },
               child: const Text(
-                '장르 구분 해보자구!',
+                '장르 구분 해보자구!   >>',
                 style: TextStyle(fontSize: 15),
               )),
         ]),
@@ -186,8 +193,7 @@ class _HomeState extends State<Home> {
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) => const MyPage()))
-                    .then((value) =>
-                        getJSONData().then((value) => print(Message.uEmail)));
+                    .then((value) => getJSONData());
               },
               leading: const Icon(
                 Icons.person,
@@ -195,16 +201,6 @@ class _HomeState extends State<Home> {
               ),
               title: const Text('My Page'),
             ),
-            // ListTile(
-            //   onTap: () {
-            //     Navigator.pushNamed(context, '/setting');
-            //   },
-            //   leading: const Icon(
-            //     Icons.settings,
-            //     // color: Colors.deepPurple,
-            //   ),
-            //   title: const Text('설정'),
-            // ),
             ListTile(
               onTap: () async {
                 final SharedPreferences sharedPreferences =

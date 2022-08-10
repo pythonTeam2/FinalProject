@@ -15,13 +15,11 @@ class _SignUpState extends State<SignUp> {
   late TextEditingController idController;
   late TextEditingController pwController;
   late TextEditingController nameController;
-  late TextEditingController birthController;
   late TextEditingController emailController;
 
   late String id;
   late String pw;
   late String name;
-  late String birth;
   late String email;
   late String result;
   late bool DuplicatedFinish;
@@ -35,7 +33,6 @@ class _SignUpState extends State<SignUp> {
     idController = TextEditingController();
     pwController = TextEditingController();
     nameController = TextEditingController();
-    birthController = TextEditingController();
     emailController = TextEditingController();
     data = [];
     getJSONData();
@@ -52,7 +49,7 @@ class _SignUpState extends State<SignUp> {
       child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-            foregroundColor: const Color.fromARGB(255, 164, 154, 239),
+            foregroundColor: Colors.black87,
             title: const Text(
               "회원가입",
               style: TextStyle(
@@ -63,7 +60,7 @@ class _SignUpState extends State<SignUp> {
             ),
             toolbarHeight: 100,
             elevation: 0,
-            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: Colors.white,
           ),
           body: SingleChildScrollView(
             child: Form(
@@ -93,17 +90,18 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               labelText: 'ID 를 입력하세요',
                               labelStyle: TextStyle(
-                                color: Color.fromARGB(150, 87, 62, 162),
+                                color: Colors.black38,
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 164, 154, 239)),
+                                borderSide: BorderSide(color: Colors.black87),
                               ),
                             ),
                             keyboardType: TextInputType.text,
-                            cursorColor:
-                                const Color.fromARGB(255, 164, 154, 239),
+                            cursorColor: Colors.black38,
                           ),
+                        ),
+                        const SizedBox(
+                          width: 10,
                         ),
                         ElevatedButton(
                             onPressed: () {
@@ -124,7 +122,8 @@ class _SignUpState extends State<SignUp> {
                                 errorSnackBar_idEmpty(context);
                               }
 
-                              if ((id.length < 4 || id.length > 15 )&& !isIdEmpty) {
+                              if ((id.length < 4 || id.length > 15) &&
+                                  !isIdEmpty) {
                                 errorSnackBar_idCheck(context);
                                 isDuplicated = true;
                               }
@@ -135,7 +134,7 @@ class _SignUpState extends State<SignUp> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: const Color.fromARGB(255, 139, 128, 222),
+                              primary: Colors.black87,
                               minimumSize: const Size(80, 40),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
@@ -163,17 +162,17 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               labelText: '특수,대소문자,숫자 포함 8~15자이내로 입력',
                               labelStyle: TextStyle(
-                                color: Color.fromARGB(150, 87, 62, 162),
+                                color: Colors.black38,
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 164, 154, 239)),
+                                    color: Colors.black87),
                               ),
                             ),
                             obscureText: true,
                             keyboardType: TextInputType.text,
                             cursorColor:
-                                const Color.fromARGB(255, 164, 154, 239),
+                                Colors.black38,
                           ),
                         ),
                       ],
@@ -197,49 +196,16 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               labelText: '성함을 입력하세요',
                               labelStyle: TextStyle(
-                                color: Color.fromARGB(150, 87, 62, 162),
+                                color: Colors.black38,
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 164, 154, 239)),
+                                    color: Colors.black87),
                               ),
                             ),
                             keyboardType: TextInputType.text,
                             cursorColor:
-                                const Color.fromARGB(255, 164, 154, 239),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
-                    child: Row(
-                      children: [
-                        const Text(
-                          '생년월일 : ',
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Flexible(
-                          child: TextField(
-                            controller: birthController,
-                            decoration: const InputDecoration(
-                              labelText: '생년월일 8자리 숫자로 입력하세요',
-                              labelStyle: TextStyle(
-                                color: Color.fromARGB(150, 87, 62, 162),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 164, 154, 239)),
-                              ),
-                            ),
-                            keyboardType: TextInputType.number,
-                            cursorColor:
-                                const Color.fromARGB(255, 164, 154, 239),
+                                Colors.black38,
                           ),
                         ),
                       ],
@@ -263,16 +229,16 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                               labelText: 'email 형식으로 입력하세요',
                               labelStyle: TextStyle(
-                                color: Color.fromARGB(150, 87, 62, 162),
+                                color: Colors.black38,
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 164, 154, 239)),
+                                    color: Colors.black87),
                               ),
                             ),
                             keyboardType: TextInputType.emailAddress,
                             cursorColor:
-                                const Color.fromARGB(255, 164, 154, 239),
+                                Colors.black38,
                           ),
                         ),
                       ],
@@ -286,16 +252,15 @@ class _SignUpState extends State<SignUp> {
                         id = idController.text;
                         pw = pwController.text;
                         name = nameController.text;
-                        birth = birthController.text;
                         email = emailController.text;
-                          if(DuplicatedFinish == false){
-                         errorSnackBar_Duplicated(context);
-                         }else{
-                        _Validation();
-                         }
+                        if (DuplicatedFinish == false) {
+                          errorSnackBar_Duplicated(context);
+                        } else {
+                          _Validation();
+                        }
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(255, 139, 128, 222),
+                        primary: Colors.blue,
                         minimumSize: const Size(80, 40),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -314,7 +279,7 @@ class _SignUpState extends State<SignUp> {
   Future getJSONData() async {
     data.clear();
     var url = Uri.parse(
-        "http://localhost:8080/Flutter/fitness/id_Duplicate_Check.jsp?");
+        "http://localhost:8080/Flutter/fitness/id_Duplicate_Check.jsp?$id");
     var response = await http.get(url);
     setState(() {
       var dataConvertedJSON = json.decode(utf8.decode(response.bodyBytes));
@@ -329,22 +294,17 @@ class _SignUpState extends State<SignUp> {
     final id = idController.text;
     final pw = pwController.text;
     final name = nameController.text;
-    final birth = birthController.text;
     final email = emailController.text;
-  
+
     if (RegExp(r'^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$')
         .hasMatch(pw)) {
       if (name.length > 2 && name.length < 15) {
-        if (birth.length == 8) {
-          if (RegExp(
-                  r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-              .hasMatch(email)) {
-            _showDialog(context);
-          } else {
-            errorSnackBar_Email(context);
-          }
+        if (RegExp(
+                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+            .hasMatch(email)) {
+          _showDialog(context);
         } else {
-          errorSnackBar_birth(context);
+          errorSnackBar_Email(context);
         }
       } else {
         errorSnackBar_name(context);
@@ -352,7 +312,6 @@ class _SignUpState extends State<SignUp> {
     } else {
       errorSnackBar_pw(context);
     }
-    
   }
 
   _showDialog(BuildContext ctx) {
@@ -404,7 +363,7 @@ class _SignUpState extends State<SignUp> {
 
   signinAction() async {
     var url = Uri.parse(
-        'http://localhost:8080/Flutter/painting/user_insert.jsp?id=$id&pw=$pw&name=$name&birth=$birth&email=$email');
+        'http://localhost:8080/Flutter/painting/user_insert.jsp?id=$id&pw=$pw&name=$name&email=$email');
     var response = await http.get(url);
     setState(() {
       var dataConvertedJSON = json.decode(utf8.decode(response.bodyBytes));
@@ -437,6 +396,7 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
+
   errorSnackBar_Duplicated(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -492,16 +452,6 @@ class _SignUpState extends State<SignUp> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text("\t\t\t\t\t이름은 2자 ~ 15자 이내로 입력해주세요."),
-        duration: Duration(seconds: 2),
-        backgroundColor: Colors.red,
-      ),
-    );
-  }
-
-  errorSnackBar_birth(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text("\t\t\t\t\t생년월일은 8자리 입니다.\n\t\t\t예)19870309."),
         duration: Duration(seconds: 2),
         backgroundColor: Colors.red,
       ),

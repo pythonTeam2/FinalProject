@@ -509,10 +509,8 @@ class _LogInState extends State<LogIn> {
     if (data.isNotEmpty) {
       // 탈퇴한 계정 입력시
       var userQuit = data[0]['uQuit']; //탈퇴여부 값 받아오기
-      var userAdmin = data[0]['uAdmin']; //관리자여부 값 받아오기
       setState(() {
         quit = userQuit;
-        admin = userAdmin;
       });
     }
   }

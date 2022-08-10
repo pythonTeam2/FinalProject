@@ -17,14 +17,12 @@ class _MyPageState extends State<MyPage> {
   late TextEditingController uIdController;
   late TextEditingController uPwController;
   late TextEditingController uNameController;
-  late TextEditingController uBirthController;
   late TextEditingController uEmailController;
 
   // DB
   late String uId;
   late String uPw;
   late String uName;
-  late String uBirth;
   late String uEmail;
   late List data;
   late String result;
@@ -36,7 +34,6 @@ class _MyPageState extends State<MyPage> {
     uIdController = TextEditingController();
     uPwController = TextEditingController();
     uNameController = TextEditingController();
-    uBirthController = TextEditingController();
     uEmailController = TextEditingController();
 
     uId = Message.uId;
@@ -88,10 +85,6 @@ class _MyPageState extends State<MyPage> {
                         Padding(
                           padding: EdgeInsets.fromLTRB(0, 0, 0, 40),
                           child: Text('이름 :'),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(0, 0, 0, 40),
-                          child: Text('생년월일 :'),
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(0, 0, 0, 40),
@@ -211,38 +204,6 @@ class _MyPageState extends State<MyPage> {
                             padding: const EdgeInsets.all(8.0),
                             child: TextField(
                               decoration: const InputDecoration(
-                                labelText: 'Birth',
-                                hintText: '생년월일을 6자로 입력해주세요!',
-                                labelStyle:
-                                    TextStyle(color: Colors.black87),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10.0)),
-                                  borderSide: BorderSide(
-                                      width: 1, color: Colors.black87),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10.0)),
-                                  borderSide: BorderSide(
-                                      width: 1, color: Colors.black87),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10.0)),
-                                ),
-                              ),
-                              controller: uBirthController,
-                              keyboardType: TextInputType.text,
-                            )),
-                      ),
-                      SizedBox(
-                        width: 250,
-                        height: 60,
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextField(
-                              decoration: const InputDecoration(
                                 labelText: 'Email',
                                 hintText: '이메일을 입력해주세요!',
                                 labelStyle:
@@ -283,7 +244,6 @@ class _MyPageState extends State<MyPage> {
                       uId = uIdController.text;
                       uPw = uPwController.text;
                       uName = uNameController.text;
-                      uBirth = uBirthController.text;
                       uEmail = uEmailController.text;
                       updateAction();
                     },
@@ -325,7 +285,7 @@ class _MyPageState extends State<MyPage> {
   Future getJSONData() async {
     data.clear();
     var url = Uri.parse(
-        "http://localhost:8080/Flutter/fitness/mypage_select.jsp?uId=$uId");
+        "http://localhost:8080/Flutter/painting/mypage_select.jsp?uId=$uId");
     var response = await http.get(url);
     setState(() {
       var dataConvertedJSON = json.decode(utf8.decode(response.bodyBytes));
@@ -336,7 +296,6 @@ class _MyPageState extends State<MyPage> {
       uIdController.text = data[0]['uId'];
       uPwController.text = data[0]['uPw'];
       uNameController.text = data[0]['uName'];
-      uBirthController.text = data[0]['uBirth'].toString();
       uEmailController.text = data[0]['uEmail'];
     });
   }
@@ -345,7 +304,7 @@ class _MyPageState extends State<MyPage> {
 
 updateAction() async {
     var url = Uri.parse(
-        'http://localhost:8080/Flutter/fitness/mypage_user_update.jsp?uId=$uId&uPw=$uPw&uName=$uName&uBirth=$uBirth&uEmail=$uEmail');
+        'http://localhost:8080/Flutter/painting/mypage_user_update.jsp?uId=$uId&uPw=$uPw&uName=$uName&uEmail=$uEmail');
     var response = await http.get(url);
     setState(() {
       var dataCovertedJSON = json.decode(utf8.decode(response.bodyBytes));
@@ -379,7 +338,7 @@ updateAction() async {
   }
 
   deleteAction() async {
-    var url = Uri.parse('http://localhost:8080/Flutter/fitness/mypage_user_delete.jsp?uId=$uId');
+    var url = Uri.parse('http://localhost:8080/Flutter/painting/mypage_user_delete.jsp?uId=$uId');
     var response = await http.get(url);
     setState(() {
       var dataCovertedJSON = json.decode(utf8.decode(response.bodyBytes));
@@ -431,7 +390,7 @@ updateAction() async {
                 onPressed: () {
                   Navigator.of(context).pop();
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/Log_in');
+                  Navigator.pushNamed(context, '/sign_in');
                 },
                 child: const Text('예'),
               ),
