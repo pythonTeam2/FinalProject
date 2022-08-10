@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:painting_recognition_app/genre/genre.dart';
 import 'package:painting_recognition_app/home/home.dart';
+import 'package:painting_recognition_app/painting/painting.dart';
 import 'package:painting_recognition_app/splashscreen.dart';
 import 'package:painting_recognition_app/user/findMain.dart';
 import 'package:painting_recognition_app/user/findMain2.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         '/mypage': (context) => const MyPage(),
 
         // painting part
-        // '/' :(context) => ,
+        '/painting' :(context) => const Painting(),
 
         // genre part
         '/genre' :(context) => const Genre(),
