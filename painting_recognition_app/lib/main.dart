@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
         // '/' :(context) => ,
 
         // genre part
-        '/genre' :(context) => const Genre(),
-      },     
-      initialRoute: '/loading', 
+        '/genre': (context) => const Genre(),
+      },
+      initialRoute: '/loading',
     );
   }
 }
