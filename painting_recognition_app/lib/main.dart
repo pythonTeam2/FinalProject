@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:painting_recognition_app/genre/genre.dart';
 import 'package:painting_recognition_app/home/home.dart';
+import 'package:painting_recognition_app/painting/painting.dart';
 import 'package:painting_recognition_app/splashscreen.dart';
 import 'package:painting_recognition_app/user/findMain.dart';
 import 'package:painting_recognition_app/user/findMain2.dart';
@@ -31,12 +32,12 @@ class MyApp extends StatelessWidget {
         // user part
         '/sign_in': (context) => const LogIn(),
         '/sign_up': (context) => const SignUp(),
-        '/find_id': (context) => const FindMain(), // 탭바 연결, 확인 필요
-        '/find_pw': (context) => const FindMain2(), // 탭바 연결, 확인 필요
+        '/find_id': (context) => const FindMain(), // 탭바 연결, id 기준
+        '/find_pw': (context) => const FindMain2(), // 탭바 연결, pw 기준
         '/mypage': (context) => const MyPage(),
 
         // painting part
-        // '/' :(context) => ,
+        '/painting' :(context) => const Painting(),
 
         // genre part
         '/genre' :(context) => const Genre(),

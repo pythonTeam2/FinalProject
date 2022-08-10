@@ -114,7 +114,7 @@ class _HomeState extends State<Home> {
                   backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
                   minimumSize: MaterialStateProperty.all(const Size(200, 50))),
               onPressed: () {
-                //
+                Navigator.pushNamed(context, '/painting');
               },
               child: const Text(
                 '명화 인식 해보자구!',
@@ -151,7 +151,7 @@ class _HomeState extends State<Home> {
                   backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
                   minimumSize: MaterialStateProperty.all(const Size(200, 50))),
               onPressed: () {
-                //
+                Navigator.pushNamed(context, '/genre');
               },
               child: const Text(
                 '장르 구분 해보자구!',
