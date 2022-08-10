@@ -8,11 +8,11 @@
  <% 
   request.setCharacterEncoding("UTF-8");
   
- String url_mysql = "jdbc:mysql://localhost/fitness?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
+ String url_mysql = "jdbc:mysql://localhost/arts?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
  String id_mysql = "root";
  String pw_mysql = "qwer1234";
 
- String whereDefault = "select uId from user";
+ String whereDefault = "select u_Id from user";
 
 
 JSONObject jsonList = new JSONObject();
