@@ -6,7 +6,6 @@ from PIL import Image
 import numpy as np
 from tensorflow import keras
 from collections import Counter
-import cv2
 
 app = Flask(__name__)
 
