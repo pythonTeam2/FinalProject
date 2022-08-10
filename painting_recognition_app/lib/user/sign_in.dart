@@ -479,7 +479,6 @@ class _LogInState extends State<LogIn> {
                       Message.uId = data[0]['uId'];
                       Message.uPw = data[0]['uPw'];
                       Message.uName = data[0]['uName'];
-                      Message.uBirth = data[0]['uBirth'];
                       Message.uEmail = data[0]['uEmail'];
 
                       Navigator.pop(context); // 다시 로그인페이지로 돌아가지 않도록
@@ -509,10 +508,8 @@ class _LogInState extends State<LogIn> {
     if (data.isNotEmpty) {
       // 탈퇴한 계정 입력시
       var userQuit = data[0]['uQuit']; //탈퇴여부 값 받아오기
-      var userAdmin = data[0]['uAdmin']; //관리자여부 값 받아오기
       setState(() {
         quit = userQuit;
-        admin = userAdmin;
       });
     }
   }

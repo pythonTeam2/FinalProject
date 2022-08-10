@@ -20,6 +20,7 @@ class _GenreState extends State<Genre> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black87,
         title: const Text('Genre Recognition'),
       ),
       body: Center(
@@ -29,17 +30,31 @@ class _GenreState extends State<Genre> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: selectedImage == null
-                  ? const Text('Please pick a image to upload')
+                  ? Column(
+                      children: const [
+                        Icon(
+                          Icons.image_outlined,
+                          size: 150,
+                          color: Colors.black38,
+                        ),
+                        Text(
+                          '우측하단의 버튼을 눌러 이미지를 업로드하세요',
+                          style: TextStyle(
+                              fontStyle: FontStyle.italic, fontSize: 15),
+                        ),
+                      ],
+                    )
                   : Image.file(selectedImage!),
             ),
             ElevatedButton(
               onPressed: onUploadImage,
-              child: const Text('Recognition'),
+              child: const Text('확인하기'),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black87,
         onPressed: getImage,
         child: const Icon(
           Icons.add_a_photo,
@@ -94,7 +109,7 @@ class _GenreState extends State<Genre> {
             actions: [
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                  backgroundColor: MaterialStateProperty.all(Colors.blue),
                 ),
                 onPressed: () {
                   Navigator.of(context).pop();

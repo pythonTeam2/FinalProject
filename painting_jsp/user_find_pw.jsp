@@ -11,11 +11,11 @@
   String email =request.getParameter("email");
   String id =request.getParameter("id");
   
- String url_mysql = "jdbc:mysql://localhost/fitness?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
+ String url_mysql = "jdbc:mysql://localhost/arts?serverTimezone=UTC&characterEncoding=utf8&useSSL=FALSE";
  String id_mysql = "root";
  String pw_mysql = "qwer1234";
 
- String whereDefault = "select uPw,uQuit from user where uId = ? and uEmail = ?";
+ String whereDefault = "select u_Pw, u_Quit from user where u_Id = ? and u_Email = ?";
  PreparedStatement ps =null;
  ResultSet rs = null;
 
